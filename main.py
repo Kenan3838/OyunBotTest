@@ -41,7 +41,7 @@ def help(update, context):
                               '/basla - Yeni oyun başladmaq\n' +
                               '/stop - oyunu dəandır\n' +
                               '/master - Aparıcı olmaq\n' +
-                              '/rating - Qrup üzrə reytinq', reply_to_message_id=False)
+                              '/rating - Qrup üzrə reytinq', reply_to_message_id=True)
 
 
 def button(update, context):
@@ -70,7 +70,7 @@ def command_start(update, context: CallbackContext):
         addme = InlineKeyboardButton(text="🧚 Qrupa əlavə edin!", url="https://t.me/Zero_Mafiuess")
         sohbet = InlineKeyboardButton(text="💬 Söhbət Qrupumuz", url="https://t.me/Zero_Mafiuess")
         oyun = InlineKeyboardButton(text="👾 Oyun Qrupumuz", url="https://t.me/Zero_Mafiuess")
-        admin = InlineKeyboardButton(text="👨🏻‍💻 Sahiblə əlaqə", url="https://t.me/@HUSEYNOFF_43434")
+        admin = InlineKeyboardButton(text="👨🏻‍💻 Sahib", url="https://t.me/@HUSEYNOFF_43434")
 
         keyboard = [[addme],[sohbet],[oyun],[admin]]
         reply_markup = InlineKeyboardMarkup(keyboard)
@@ -88,7 +88,7 @@ def command_start(update, context: CallbackContext):
         game = get_or_create_game(chat_id)
         game.start()
 
-        update.message.reply_text('İzah Oyunu Başladı✨'.format(username), reply_to_message_id=False)
+        update.message.reply_text('Söz Oyunu Başladı✨'.format(username), reply_to_message_id=True)
 
         set_master(update, context)
 
